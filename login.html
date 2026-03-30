@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login </title>
+</head>
+<body>
+
+<h2>Login</h2>
+
+<div id="login">
+  <input type="text" id="user" placeholder="Usuário"><br><br>
+  <input type="password" id="pass" placeholder="Senha"><br><br>
+  <button onclick="login()">Entrar</button>
+</div>
+
+<div id="2fa" style="display:none;">
+  <h3>Digite o código de verificação</h3>
+  <input type="text" id="code" placeholder="Código 2FA"><br><br>
+  <button onclick="verificarCodigo()">Verificar</button>
+</div>
+
+<p id="msg"></p>
+
+<script src="script.js"></script>
+
+</body>
+</html>
