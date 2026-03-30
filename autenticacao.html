@@ -1,0 +1,30 @@
+function login() {
+  const user = document.getElementById("user").value;
+  const pass = document.getElementById("pass").value;
+
+  if (user === "admin" && pass === "123") {
+    gerarCodigo();
+    document.getElementById("login").style.display = "none";
+    document.getElementById("2fa").style.display = "block";
+  } else {
+    document.getElementById("msg").innerText = "Login inválido!";
+  }
+}
+
+// Gerar código aleatório (simula envio)
+function gerarCodigo() {
+  codigoGerado = Math.floor(100000 + Math.random() * 900000).toString();
+  console.log("Código 2FA:", codigoGerado); // Em produção, enviar por SMS/email
+  alert("Código enviado (simulação): " + codigoGerado);
+}
+
+// Verificar código
+function verificarCodigo() {
+  const code = document.getElementById("code").value;
+
+  if (code === codigoGerado) {
+    document.getElementById("msg").innerText = "Autenticação completa!";
+  } else {
+    document.getElementById("msg").innerText = "Código incorreto!";
+  }
+}
